@@ -1,7 +1,7 @@
 import React from 'react';
 import { Briefcase, GraduationCap, Calendar, MapPin } from 'lucide-react';
 import './Experience.css';
-import auroraLogoImg from '../assets/aurora_logo.png';
+import auroraLogoImg from '../assets/logo_aurora.png';
 
 const MetaIcon = () => (
   <svg role="img" viewBox="0 0 24 24" width="28" height="28" fill="#0668E1" xmlns="http://www.w3.org/2000/svg">
