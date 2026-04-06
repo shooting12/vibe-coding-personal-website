@@ -8,7 +8,7 @@ export default function Experience() {
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Experience & Education</span></h2>
 
-        <div className="timeline animate-reveal delay-200">
+        <div className="timeline">
           {/* Work Experience */}
           <div className="timeline-item">
             <div className="timeline-icon"><Briefcase size={24} /></div>

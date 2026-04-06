@@ -23,7 +23,7 @@ export default function Projects() {
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Selected Projects</span></h2>
         
-        <div className="projects-grid animate-reveal delay-300">
+        <div className="projects-grid">
           {projects.map((project, idx) => (
             <div key={idx} className="glass-panel project-card">
               <div className="project-header">

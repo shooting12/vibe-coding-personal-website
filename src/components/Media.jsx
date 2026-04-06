@@ -8,7 +8,7 @@ export default function Media() {
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Featured Media</span></h2>
         
-        <div className="media-grid animate-reveal delay-300">
+        <div className="media-grid">
           <div className="glass-panel media-card focus-card">
             <div className="media-image-wrapper">
               <img src="/assets/horizon.png" alt="Horizon OS visualization" className="media-image" />

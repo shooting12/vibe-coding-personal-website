@@ -5,7 +5,7 @@ import './Hero.css';
 
 export default function Hero() {
   return (
-    <section className="section hero-section animate-reveal">
+    <section className="section hero-section">
       <div className="bg-gradient-glow" style={{ top: '10%', left: '20%' }}></div>
       <div className="bg-gradient-glow" style={{ top: '40%', right: '10%', animationDelay: '1s' }}></div>
 

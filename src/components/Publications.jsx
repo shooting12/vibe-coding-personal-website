@@ -23,7 +23,7 @@ export default function Publications() {
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Publications</span></h2>
         
-        <div className="pub-list animate-reveal delay-400">
+        <div className="pub-list">
           {pubs.map((pub, idx) => (
             <div key={idx} className="glass-panel pub-card">
               <div className="pub-icon"><BookOpen size={28} /></div>

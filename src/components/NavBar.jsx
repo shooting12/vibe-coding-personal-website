@@ -11,7 +11,7 @@ export default function NavBar() {
 
   return (
     <nav className="nav-bar-container">
-      <div className="nav-bar glass-panel animate-reveal">
+      <div className="nav-bar glass-panel" style={{ transform: 'translateZ(0)' }}>
         {links.map((link) => (
           <a key={link.label} href={link.href} className="nav-link">
             {link.label}
