@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, User, Mail, MapPin, FileText } from 'lucide-react';
+import { Code, User, Mail, MapPin, FileText, GraduationCap } from 'lucide-react';
 import profileImg from '../assets/profile.jpg';
 import './Hero.css';
 
@@ -13,7 +13,14 @@ export default function Hero() {
         <div className="hero-content">
           <h2 className="greeting">Hello, I'm</h2>
           <h1 className="name text-gradient">Shooting Chuang</h1>
-          <h3 className="title">Senior Software Engineer at Meta</h3>
+          <h3 className="title" style={{ marginBottom: '0.5rem' }}>Senior Software Engineer at Meta</h3>
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
+            <GraduationCap size={20} color="var(--accent-blue)" />
+            <span style={{ fontSize: '1.1rem', fontWeight: 500 }}>
+              M.S. in Software Engineering, <span className="text-gradient">Carnegie Mellon University</span>
+            </span>
+          </div>
 
           <p className="description text-secondary">
             Specializing in Horizon OS platform development. Passionate about building robust, scalable
