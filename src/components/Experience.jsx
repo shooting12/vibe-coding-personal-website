@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, GraduationCap, Calendar } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, MapPin } from 'lucide-react';
 import './Experience.css';
 
 export default function Experience() {
@@ -15,7 +15,10 @@ export default function Experience() {
             <div className="glass-panel timeline-content">
               <div className="timeline-header">
                 <h3>Senior Software Engineer</h3>
-                <span className="timeline-date"><Calendar size={16} /> Nov 2023 - Present</span>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                  <span className="timeline-date"><MapPin size={16} /> Burlingame, CA</span>
+                  <span className="timeline-date"><Calendar size={16} /> Nov 2023 - Present</span>
+                </div>
               </div>
               <h4 className="timeline-subtitle text-gradient">Meta</h4>
               <h5 className="timeline-team" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem', marginTop: '-0.25rem', fontWeight: 500 }}>
@@ -40,7 +43,10 @@ export default function Experience() {
             <div className="glass-panel timeline-content">
               <div className="timeline-header">
                 <h3>Software Engineer</h3>
-                <span className="timeline-date"><Calendar size={16} /> Mar 2023 - Oct 2023</span>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                  <span className="timeline-date"><MapPin size={16} /> Mountain View, CA</span>
+                  <span className="timeline-date"><Calendar size={16} /> Mar 2023 - Oct 2023</span>
+                </div>
               </div>
               <h4 className="timeline-subtitle text-gradient">Aurora</h4>
               <h5 className="timeline-team" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem', marginTop: '-0.25rem', fontWeight: 500 }}>
@@ -65,7 +71,10 @@ export default function Experience() {
             <div className="glass-panel timeline-content">
               <div className="timeline-header">
                 <h3>Master of Software Engineering</h3>
-                <span className="timeline-date"><Calendar size={16} /> Aug 2021 - Dec 2022</span>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                  <span className="timeline-date"><MapPin size={16} /> Pittsburgh, PA</span>
+                  <span className="timeline-date"><Calendar size={16} /> Aug 2021 - Dec 2022</span>
+                </div>
               </div>
               <h4 className="timeline-subtitle text-gradient">Carnegie Mellon University</h4>
               <h5 className="timeline-team" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem', marginTop: '-0.25rem', fontWeight: 500 }}>
