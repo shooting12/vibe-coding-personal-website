@@ -40,14 +40,14 @@ export default function Publications() {
             <div key={idx} className="glass-panel pub-card">
               <div className="pub-icon"><BookOpen size={28} /></div>
               <div className="pub-content">
-                {pub.link ? (
-                  <a href={pub.link} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem', width: '100%' }} className="hover-cyan text-primary">
-                    <h3 style={{ margin: 0 }}>{pub.title}</h3>
-                    <FileText size={18} color="var(--accent-blue)" style={{ flexShrink: 0 }} />
-                  </a>
-                ) : (
-                  <h3>{pub.title}</h3>
-                )}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem', width: '100%' }}>
+                  <h3 style={{ margin: 0 }}>{pub.title}</h3>
+                  {pub.link && (
+                    <a href={pub.link} target="_blank" rel="noopener noreferrer" className="pub-pdf-link">
+                      <FileText size={18} />
+                    </a>
+                  )}
+                </div>
                 <p className="pub-authors text-secondary" style={{ marginTop: '0.5rem' }}>{pub.authors}</p>
                 <div className="pub-meta">
                   <span className="pub-venue">{pub.venue}</span>
