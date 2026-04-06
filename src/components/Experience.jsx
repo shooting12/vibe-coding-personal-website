@@ -83,6 +83,11 @@ export default function Experience() {
               <p className="timeline-text text-secondary">
                 Focused on software architecture, scalable systems, and engineering management.
               </p>
+              <div className="skills-wrap">
+                <span className="badge">Machine Learning</span>
+                <span className="badge">Visual Learning</span>
+                <span className="badge">Architecture Design</span>
+              </div>
             </div>
           </div>
         </div>
