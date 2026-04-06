@@ -40,9 +40,12 @@ export default function Experience() {
                 </div>
               </div>
               <div className="company-org-group">
-                <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Meta</h4>
-                <MetaIcon />
-                <h5 className="timeline-team" style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '1.1rem', fontWeight: 500 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Meta</h4>
+                  <MetaIcon />
+                </div>
+                <div className="group-separator"></div>
+                <h5 className="timeline-team">
                   Reality Labs — Spatial Extensions
                 </h5>
               </div>
@@ -71,9 +74,12 @@ export default function Experience() {
                 </div>
               </div>
               <div className="company-org-group">
-                <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Aurora</h4>
-                <AuroraIcon />
-                <h5 className="timeline-team" style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '1.1rem', fontWeight: 500 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Aurora</h4>
+                  <AuroraIcon />
+                </div>
+                <div className="group-separator"></div>
+                <h5 className="timeline-team">
                   Perception Simulation
                 </h5>
               </div>
@@ -101,9 +107,12 @@ export default function Experience() {
                 </div>
               </div>
               <div className="company-org-group">
-                <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Carnegie Mellon University</h4>
-                <CmuIcon />
-                <h5 className="timeline-team" style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '1.1rem', fontWeight: 500 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Carnegie Mellon University</h4>
+                  <CmuIcon />
+                </div>
+                <div className="group-separator"></div>
+                <h5 className="timeline-team">
                   School of Computer Science
                 </h5>
               </div>
