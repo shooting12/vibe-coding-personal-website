@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
+import Education from './components/Education';
 import Media from './components/Media';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <NavBar />
         <Experience />
+        <Education />
         <Media />
         <Projects />
         <Publications />

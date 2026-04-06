@@ -4,6 +4,7 @@ import './NavBar.css';
 export default function NavBar() {
   const links = [
     { label: 'Experience', href: '#experience' },
+    { label: 'Education', href: '#education' },
     { label: 'Media', href: '#media' },
     { label: 'Projects', href: '#projects' },
     { label: 'Publications', href: '#publications' }
