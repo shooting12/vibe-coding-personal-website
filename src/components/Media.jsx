@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import './Media.css';
+import horizonImg from '../assets/horizon.png';
 
 export default function Media() {
   return (
@@ -11,7 +12,7 @@ export default function Media() {
         <div className="media-grid">
           <div className="glass-panel media-card focus-card">
             <div className="media-image-wrapper">
-              <img src={`${import.meta.env.BASE_URL}assets/horizon.png`} alt="Horizon OS visualization" className="media-image" />
+              <img src={horizonImg} alt="Horizon OS visualization" className="media-image" />
               <div className="play-overlay">
                 <Play fill="white" size={64} className="play-icon" />
               </div>
