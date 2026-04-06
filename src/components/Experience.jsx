@@ -41,11 +41,8 @@ export default function Experience() {
               </div>
               <h4 className="timeline-subtitle text-gradient">Aurora</h4>
               <p className="timeline-text text-secondary" style={{ marginBottom: "1rem" }}>
-                <strong>[ Perception simulation ]</strong><br />
-                <span style={{ display: 'block', paddingLeft: '1rem', marginTop: '0.5rem' }}>
-                  • Optimized perception simulation accuracy by developing outlier detection algorithms for vehicle trajectories, significantly enhancing the robustness and reliability of path prediction models.<br />
-                  <span style={{ display: 'block', marginTop: '0.25rem' }}>• Engineered 3D scene projection pipelines from simulated LiDAR and Radar sensor data, enabling high-fidelity environmental modeling to validate safety-critical collision avoidance and autonomous routing.</span>
-                </span>
+                Optimized perception simulation by developing outlier detection for vehicle trajectories, significantly
+                boosting path prediction robustness. Also engineered 3D scene projection pipelines from simulated LiDAR/Radar data, enabling high-fidelity environmental modeling to validate safety-critical autonomous routing.
               </p>
               <div className="skills-wrap">
                 <span className="badge">Perception</span>
