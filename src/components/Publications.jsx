@@ -5,16 +5,16 @@ import './Publications.css';
 export default function Publications() {
   const pubs = [
     {
-      title: "Optimizing Resource Allocation in AR/VR Operating Systems",
-      venue: "ACM Symposium on Operating Systems Principles (SOSP)",
-      year: "2024",
+      title: "Finger Detection for Multi-Touch Tabletop Display System",
+      venue: "National Taiwan University Thesis",
+      year: "2010",
       authors: "Shooting Chuang, et al."
     },
     {
-      title: "Scalable Architectures for Modern Web Applications",
-      venue: "IEEE International Conference on Software Architecture",
-      year: "2023",
-      authors: "Shooting Chuang, J. Doe"
+      title: "Non-Photorealistic Rendering Of Stylish, Distinctive Faces",
+      venue: "IPPR Conference on Computer Vision, Graphics, and Image Processing",
+      year: "2009",
+      authors: "Shooting Chuang, et al."
     }
   ];
 
@@ -22,7 +22,7 @@ export default function Publications() {
     <section className="section" id="publications">
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Publications</span></h2>
-        
+
         <div className="pub-list">
           {pubs.map((pub, idx) => (
             <div key={idx} className="glass-panel pub-card">
