@@ -1,5 +1,5 @@
-import React from 'react';
-import { GraduationCap, Calendar, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { GraduationCap, Calendar, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
 import './Experience.css';
 import ntuLogoImg from '../assets/logo_ntu.png';
 
@@ -16,6 +16,8 @@ const NtuIcon = () => (
 );
 
 export default function Education() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <section className="section" id="education">
       <div className="container">
@@ -54,38 +56,55 @@ export default function Education() {
             </div>
           </div>
 
-          {/* Education - NTU */}
-          <div className="timeline-item">
-            <div className="timeline-icon"><GraduationCap size={24} /></div>
-            <div className="glass-panel timeline-content">
-              <div className="timeline-header">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                  <h3 style={{ margin: 0 }}>National Taiwan University</h3>
-                  <NtuIcon />
+          {isExpanded && (
+            <>
+              {/* Education - NTU */}
+              <div className="timeline-item">
+                <div className="timeline-icon"><GraduationCap size={24} /></div>
+                <div className="glass-panel timeline-content">
+                  <div className="timeline-header">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                      <h3 style={{ margin: 0 }}>National Taiwan University</h3>
+                      <NtuIcon />
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                      <span className="timeline-date"><MapPin size={16} /> Taipei, Taiwan</span>
+                      <span className="timeline-date"><Calendar size={16} /> Sep 2008 - Jun 2010</span>
+                    </div>
+                  </div>
+                  <div className="company-org-group">
+                    <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Master of Science</h4>
+                    <div className="group-separator"></div>
+                    <h5 className="timeline-team">
+                      College of Electrical Engineering & Computer Science
+                    </h5>
+                  </div>
+                  <p className="timeline-text text-secondary">
+                    [Placeholder] To be continue...
+                  </p>
+                  <div className="skills-wrap">
+                    <span className="badge">Image Processing</span>
+                    <span className="badge">Object Detection</span>
+                    <span className="badge">Face Recognition</span>
+                    <span className="badge">Algorithm Design</span>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-                  <span className="timeline-date"><MapPin size={16} /> Taipei, Taiwan</span>
-                  <span className="timeline-date"><Calendar size={16} /> Sep 2008 - Jun 2010</span>
-                </div>
               </div>
-              <div className="company-org-group">
-                <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Master of Science</h4>
-                <div className="group-separator"></div>
-                <h5 className="timeline-team">
-                  College of Electrical Engineering & Computer Science
-                </h5>
-              </div>
-              <p className="timeline-text text-secondary">
-                [Placeholder] To be continue...
-              </p>
-              <div className="skills-wrap">
-                <span className="badge">Image Processing</span>
-                <span className="badge">Object Detection</span>
-                <span className="badge">Face Recognition</span>
-                <span className="badge">Algorithm Design</span>
-              </div>
-            </div>
-          </div>
+            </>
+          )}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+          <button
+            className="toggle-expand-btn"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? (
+              <>Show Less <ChevronUp size={16} /></>
+            ) : (
+              <>View Past Education <ChevronDown size={16} /></>
+            )}
+          </button>
         </div>
       </div>
     </section>
