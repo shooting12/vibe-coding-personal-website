@@ -5,15 +5,15 @@ import './Projects.css';
 export default function Projects() {
   const projects = [
     {
-      title: "Distributed Task Scheduler",
-      description: "A highly resilient distributed scheduler built with C++ and Go. Handles millions of background jobs per day with minimal latency.",
-      tags: ["C++", "Go", "Distributed Systems"],
+      title: "Weakly Supervised Object Localization System",
+      description: "Implemented a weakly supervised convolutional neural network (CNN) for object detection and classification, specifically building a deep detection network that localizes objects within images without requiring traditional bounding box annotations.",
+      tags: ["Computer Vision", "Machine Learning", "PyTorch"],
       link: "#"
     },
     {
-      title: "Real-time Metrics Dashboard",
-      description: "React-based visualization platform for monitoring large scale infra. Features live glowing charts and 3D data representations.",
-      tags: ["React", "WebGL", "TypeScript"],
+      title: "NASA Moon Ranger Project",
+      description: "Develop the mission control software for the MoonRanger lunar rover whenever it is on the moon for a future private lunar NASA mission. Gathered requirements, designed the software architecture, and devised executed the quality plan.",
+      tags: ["React"],
       link: "#"
     }
   ];
@@ -22,7 +22,7 @@ export default function Projects() {
     <section className="section" id="projects">
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Selected Projects</span></h2>
-        
+
         <div className="projects-grid">
           {projects.map((project, idx) => (
             <div key={idx} className="glass-panel project-card">
