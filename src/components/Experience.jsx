@@ -136,7 +136,7 @@ export default function Experience() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+        <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
           <button
             className="toggle-expand-btn"
             onClick={() => setIsExpanded(!isExpanded)}
