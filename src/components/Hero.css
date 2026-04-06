@@ -71,7 +71,7 @@
 }
 
 .social-icon:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   transform: translateY(-3px);
   box-shadow: 0 4px 12px var(--glass-glow);
   color: var(--accent-cyan);
@@ -93,7 +93,7 @@
   height: 320px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.2);
   display: block;
 }
 
