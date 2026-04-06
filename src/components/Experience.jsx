@@ -4,6 +4,7 @@ import './Experience.css';
 import auroraLogoImg from '../assets/logo_aurora.png';
 import mtkLogoImg from '../assets/logo_mtk.svg';
 import metaLogoImg from '../assets/logo_meta.svg';
+import ntuLogoImg from '../assets/logo_ntu.png';
 
 const MetaIcon = () => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '28px' }}>
@@ -20,6 +21,12 @@ const AuroraIcon = () => (
 const MtkIcon = () => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '22px' }}>
     <img src={mtkLogoImg} alt="MediaTek Logo" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
+  </div>
+);
+
+const NtuIcon = () => (
+  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '28px' }}>
+    <img src={ntuLogoImg} alt="NTU Logo" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
   </div>
 );
 
@@ -111,7 +118,7 @@ export default function Experience() {
                   <div className="timeline-header">
                     <h3>Software Engineer</h3>
                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-                      <span className="timeline-date"><MapPin size={16} /> Hsinchu, Taiwan</span>
+                      <span className="timeline-date"><MapPin size={16} /> Taipei, Taiwan</span>
                       <span className="timeline-date"><Calendar size={16} /> Jan 2012 - Mar 2021</span>
                     </div>
                   </div>
@@ -135,6 +142,39 @@ export default function Experience() {
                     <span className="badge">UI rendering</span>
                     <span className="badge">Camera Middleware</span>
                     <span className="badge">Embedded Systems</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Work Experience - NTU Research Assistant */}
+              <div className="timeline-item">
+                <div className="timeline-icon"><Briefcase size={24} /></div>
+                <div className="glass-panel timeline-content">
+                  <div className="timeline-header">
+                    <h3>Research Assistant</h3>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                      <span className="timeline-date"><MapPin size={16} /> Taipei, Taiwan</span>
+                      <span className="timeline-date"><Calendar size={16} /> Sep 2008 - Jun 2010</span>
+                    </div>
+                  </div>
+                  <div className="company-org-group">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                      <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>National Taiwan University</h4>
+                      <NtuIcon />
+                    </div>
+                    <div className="group-separator"></div>
+                    <h5 className="timeline-team">
+                      Image and Vision Lab
+                    </h5>
+                  </div>
+                  <p className="timeline-text text-secondary" style={{ marginBottom: "1rem" }}>
+                    [Placeholder] To be continue...
+                  </p>
+                  <div className="skills-wrap">
+                    <span className="badge">Image Processing</span>
+                    <span className="badge">Object Detection</span>
+                    <span className="badge">Computer Vision</span>
+                    <span className="badge">Human Computer Interaction</span>
                   </div>
                 </div>
               </div>
