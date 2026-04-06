@@ -15,6 +15,24 @@ export default function Projects() {
       description: "Develop the mission control software for the MoonRanger lunar rover whenever it is on the moon for a future private lunar NASA mission. Gathered requirements, designed the software architecture, and devised executed the quality plan.",
       tags: ["React"],
       link: "#"
+    },
+    {
+      title: "Caching Proxy",
+      description: "Built an HTTP proxy with POSIX threads and an LRU cache, reducing latency by 30% and developed a cache simulator.",
+      tags: ["C", "POSIX", "LRU Cache"],
+      link: "#"
+    },
+    {
+      title: "Handwriting Recognition System",
+      description: "Built a neural network in Python for handwriting recognition (75% accuracy) and later optimized it with a CNN using PyTorch (95% accuracy).",
+      tags: ["Neural Networks", "PyTorch"],
+      link: "#"
+    },
+    {
+      title: "Augment Reality in Videos",
+      description: "Implemented a real-time AR system that renders video onto moving targets using feature detection, matching, and warping, boosting FPS by 50% with multi-feature algorithms.",
+      tags: ["AR", "Computer Vision", "Real-time", "Feature Detection"],
+      link: "#"
     }
   ];
 
