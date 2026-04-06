@@ -11,7 +11,7 @@ export default function Media() {
         <div className="media-grid">
           <div className="glass-panel media-card focus-card">
             <div className="media-image-wrapper">
-              <img src="/assets/horizon.png" alt="Horizon OS visualization" className="media-image" />
+              <img src={`${import.meta.env.BASE_URL}assets/horizon.png`} alt="Horizon OS visualization" className="media-image" />
               <div className="play-overlay">
                 <Play fill="white" size={64} className="play-icon" />
               </div>
