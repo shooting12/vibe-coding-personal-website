@@ -1,5 +1,7 @@
 import React from 'react';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, ExternalLink, FileText } from 'lucide-react';
+import fingerDetectionPdf from '../assets/Paper_Finger Detection for Multi-Touch Tabletop Display System.pdf';
+import nprFacePdf from '../assets/Paper_NPRface_CVGIP09.pdf';
 import './Publications.css';
 
 export default function Publications() {
@@ -8,13 +10,15 @@ export default function Publications() {
       title: "Finger Detection for Multi-Touch Tabletop Display System",
       venue: "National Taiwan University Thesis",
       year: "2010",
-      authors: "Shooting Chuang, et al."
+      authors: "Shooting Chuang, et al.",
+      link: fingerDetectionPdf
     },
     {
       title: "Non-Photorealistic Rendering Of Stylish, Distinctive Faces",
       venue: "IPPR Conference on Computer Vision, Graphics, and Image Processing",
       year: "2009",
-      authors: "Shooting Chuang, et al."
+      authors: "Shooting Chuang, et al.",
+      link: nprFacePdf
     }
   ];
 
@@ -28,8 +32,15 @@ export default function Publications() {
             <div key={idx} className="glass-panel pub-card">
               <div className="pub-icon"><BookOpen size={28} /></div>
               <div className="pub-content">
-                <h3>{pub.title}</h3>
-                <p className="pub-authors text-secondary">{pub.authors}</p>
+                {pub.link ? (
+                  <a href={pub.link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }} className="hover-cyan text-primary">
+                    <h3 style={{ margin: 0 }}>{pub.title}</h3>
+                    <FileText size={18} color="var(--accent-blue)" />
+                  </a>
+                ) : (
+                  <h3>{pub.title}</h3>
+                )}
+                <p className="pub-authors text-secondary" style={{ marginTop: '0.5rem' }}>{pub.authors}</p>
                 <div className="pub-meta">
                   <span className="pub-venue">{pub.venue}</span>
                   <span className="pub-year">{pub.year}</span>

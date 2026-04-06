@@ -145,6 +145,8 @@ export default function Experience() {
                     <span className="badge">C / C++</span>
                     <span className="badge">Java</span>
                     <span className="badge">Android</span>
+                    <span className="badge">UI rendering</span>
+                    <span className="badge">Camera Middleware</span>
                     <span className="badge">Embedded Systems</span>
                   </div>
                 </div>
@@ -176,7 +178,7 @@ export default function Experience() {
                   </p>
                   <div className="skills-wrap">
                     <span className="badge">Machine Learning</span>
-                    <span className="badge">Visual Learning</span>
+                    <span className="badge">Computer Vision</span>
                     <span className="badge">Architecture Design</span>
                   </div>
                 </div>
@@ -208,6 +210,8 @@ export default function Experience() {
                   </p>
                   <div className="skills-wrap">
                     <span className="badge">Image Processing</span>
+                    <span className="badge">Object Detection</span>
+                    <span className="badge">Face Recognition</span>
                     <span className="badge">Algorithm Design</span>
                   </div>
                 </div>
