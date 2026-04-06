@@ -33,16 +33,16 @@ export default function Hero() {
           </div>
 
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/suting-chuang/" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://www.linkedin.com/in/suting-chuang/" target="_blank" rel="noopener noreferrer" className="social-icon" data-tooltip="LinkedIn">
               <User size={24} />
             </a>
-            <a href="mailto:shooting729@gmail.com" className="social-icon">
+            <a href="mailto:shooting729@gmail.com" className="social-icon" data-tooltip="Email">
               <Mail size={24} />
             </a>
-            <a href="https://github.com/shooting12" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://github.com/shooting12" target="_blank" rel="noopener noreferrer" className="social-icon" data-tooltip="GitHub">
               <Code size={24} />
             </a>
-            <a href="https://drive.google.com/file/d/1vydwiupIZbbnBua608r5BS6ElIn_EKOT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="social-icon" title="Resume">
+            <a href="https://drive.google.com/file/d/1vydwiupIZbbnBua608r5BS6ElIn_EKOT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="social-icon" data-tooltip="Resume">
               <FileText size={24} />
             </a>
           </div>
