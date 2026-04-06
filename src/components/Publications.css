@@ -1,0 +1,45 @@
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pub-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pub-icon {
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.1);
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+.pub-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.pub-authors {
+  margin-bottom: 0.5rem;
+}
+
+.pub-meta {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--accent-blue);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+  .pub-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

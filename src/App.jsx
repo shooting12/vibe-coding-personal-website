@@ -1,0 +1,26 @@
+import React from 'react';
+import Hero from './components/Hero';
+import Experience from './components/Experience';
+import Media from './components/Media';
+import Projects from './components/Projects';
+import Publications from './components/Publications';
+import './App.css';
+
+function App() {
+  return (
+    <div className="app-container">
+      <main className="main-content">
+        <Hero />
+        <Experience />
+        <Media />
+        <Projects />
+        <Publications />
+      </main>
+      <footer className="footer">
+        <p>&copy; {new Date().getFullYear()} Shooting Chuang. Built with React & Vite.</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
