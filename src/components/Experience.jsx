@@ -1,5 +1,5 @@
-import React from 'react';
-import { Briefcase, GraduationCap, Calendar, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { Briefcase, GraduationCap, Calendar, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
 import './Experience.css';
 import auroraLogoImg from '../assets/logo_aurora.png';
 
@@ -22,6 +22,8 @@ const CmuIcon = () => (
 );
 
 export default function Experience() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <section className="section" id="experience">
       <div className="container">
@@ -54,6 +56,7 @@ export default function Experience() {
                 performance and building robust systems for the next generation of computing.
               </p>
               <div className="skills-wrap">
+                <span className="badge">VR / AR</span>
                 <span className="badge">Horizon OS</span>
                 <span className="badge">Platform Engineering</span>
                 <span className="badge">C++</span>
@@ -62,70 +65,88 @@ export default function Experience() {
             </div>
           </div>
 
-          {/* Work Experience */}
-          <div className="timeline-item">
-            <div className="timeline-icon"><Briefcase size={24} /></div>
-            <div className="glass-panel timeline-content">
-              <div className="timeline-header">
-                <h3>Software Engineer</h3>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-                  <span className="timeline-date"><MapPin size={16} /> Mountain View, CA</span>
-                  <span className="timeline-date"><Calendar size={16} /> Mar 2023 - Oct 2023</span>
+          {isExpanded && (
+            <>
+              {/* Work Experience */}
+              <div className="timeline-item">
+                <div className="timeline-icon"><Briefcase size={24} /></div>
+                <div className="glass-panel timeline-content">
+                  <div className="timeline-header">
+                    <h3>Software Engineer</h3>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                      <span className="timeline-date"><MapPin size={16} /> Mountain View, CA</span>
+                      <span className="timeline-date"><Calendar size={16} /> Mar 2023 - Oct 2023</span>
+                    </div>
+                  </div>
+                  <div className="company-org-group">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                      <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Aurora</h4>
+                      <AuroraIcon />
+                    </div>
+                    <div className="group-separator"></div>
+                    <h5 className="timeline-team">
+                      Perception Simulation
+                    </h5>
+                  </div>
+                  <p className="timeline-text text-secondary" style={{ marginBottom: "1rem" }}>
+                    Optimized perception simulation by developing outlier detection for vehicle trajectories, significantly
+                    boosting path prediction robustness. Also engineered 3D scene projection pipelines from simulated LiDAR/Radar data, enabling high-fidelity environmental modeling to validate safety-critical autonomous routing.
+                  </p>
+                  <div className="skills-wrap">
+                    <span className="badge">Perception</span>
+                    <span className="badge">Simulation</span>
+                    <span className="badge">Python</span>
+                    <span className="badge">LiDAR / Radar</span>
+                  </div>
                 </div>
               </div>
-              <div className="company-org-group">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Aurora</h4>
-                  <AuroraIcon />
-                </div>
-                <div className="group-separator"></div>
-                <h5 className="timeline-team">
-                  Perception Simulation
-                </h5>
-              </div>
-              <p className="timeline-text text-secondary" style={{ marginBottom: "1rem" }}>
-                Optimized perception simulation by developing outlier detection for vehicle trajectories, significantly
-                boosting path prediction robustness. Also engineered 3D scene projection pipelines from simulated LiDAR/Radar data, enabling high-fidelity environmental modeling to validate safety-critical autonomous routing.
-              </p>
-              <div className="skills-wrap">
-                <span className="badge">Perception</span>
-                <span className="badge">Simulation</span>
-                <span className="badge">LiDAR / Radar</span>
-              </div>
-            </div>
-          </div>
 
-          {/* Education */}
-          <div className="timeline-item">
-            <div className="timeline-icon"><GraduationCap size={24} /></div>
-            <div className="glass-panel timeline-content">
-              <div className="timeline-header">
-                <h3>Master of Software Engineering</h3>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-                  <span className="timeline-date"><MapPin size={16} /> Pittsburgh, PA</span>
-                  <span className="timeline-date"><Calendar size={16} /> Aug 2021 - Dec 2022</span>
+              {/* Education */}
+              <div className="timeline-item">
+                <div className="timeline-icon"><GraduationCap size={24} /></div>
+                <div className="glass-panel timeline-content">
+                  <div className="timeline-header">
+                    <h3>Master of Software Engineering</h3>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                      <span className="timeline-date"><MapPin size={16} /> Pittsburgh, PA</span>
+                      <span className="timeline-date"><Calendar size={16} /> Aug 2021 - Dec 2022</span>
+                    </div>
+                  </div>
+                  <div className="company-org-group">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                      <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Carnegie Mellon University</h4>
+                      <CmuIcon />
+                    </div>
+                    <div className="group-separator"></div>
+                    <h5 className="timeline-team">
+                      School of Computer Science
+                    </h5>
+                  </div>
+                  <p className="timeline-text text-secondary">
+                    Focused on software architecture, scalable systems, and engineering management.
+                  </p>
+                  <div className="skills-wrap">
+                    <span className="badge">Machine Learning</span>
+                    <span className="badge">Visual Learning</span>
+                    <span className="badge">Architecture Design</span>
+                  </div>
                 </div>
               </div>
-              <div className="company-org-group">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <h4 className="timeline-subtitle text-gradient" style={{ margin: 0 }}>Carnegie Mellon University</h4>
-                  <CmuIcon />
-                </div>
-                <div className="group-separator"></div>
-                <h5 className="timeline-team">
-                  School of Computer Science
-                </h5>
-              </div>
-              <p className="timeline-text text-secondary">
-                Focused on software architecture, scalable systems, and engineering management.
-              </p>
-              <div className="skills-wrap">
-                <span className="badge">Machine Learning</span>
-                <span className="badge">Visual Learning</span>
-                <span className="badge">Architecture Design</span>
-              </div>
-            </div>
-          </div>
+            </>
+          )}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+          <button
+            className="toggle-expand-btn"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? (
+              <>Show Less <ChevronUp size={16} /></>
+            ) : (
+              <>View Past Experience & Education <ChevronDown size={16} /></>
+            )}
+          </button>
         </div>
       </div>
     </section>
