@@ -4,6 +4,7 @@ import Experience from './components/Experience';
 import Media from './components/Media';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="app-container">
       <main className="main-content">
         <Hero />
+        <NavBar />
         <Experience />
         <Media />
         <Projects />
