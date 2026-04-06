@@ -16,7 +16,7 @@ const AuroraIcon = () => (
 );
 
 const CmuIcon = () => (
-  <svg viewBox="0 0 50 20" width="70" height="28" fill="#C41230" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 50 20" width="55" height="22" fill="#C41230" xmlns="http://www.w3.org/2000/svg">
     <text x="0" y="16" fontFamily="Georgia, serif" fontSize="18" fontWeight="800" letterSpacing="0.5">CMU</text>
   </svg>
 );
