@@ -8,15 +8,15 @@ export default function Hero() {
     <section className="section hero-section animate-reveal">
       <div className="bg-gradient-glow" style={{ top: '10%', left: '20%' }}></div>
       <div className="bg-gradient-glow" style={{ top: '40%', right: '10%', animationDelay: '1s' }}></div>
-      
+
       <div className="container hero-container">
         <div className="hero-content">
           <h2 className="greeting">Hello, I'm</h2>
           <h1 className="name text-gradient">Shooting Chuang</h1>
           <h3 className="title">Senior Software Engineer at Meta</h3>
-          
+
           <p className="description text-secondary">
-            Specializing in Horizon OS platform development. Passionate about building robust, scalable 
+            Specializing in Horizon OS platform development. Passionate about building robust, scalable
             systems and elegant user interfaces for the next generation of computing.
           </p>
 
@@ -29,15 +29,15 @@ export default function Hero() {
             <a href="https://www.linkedin.com/in/suting-chuang/" target="_blank" rel="noopener noreferrer" className="social-icon">
               <User size={24} />
             </a>
-            <a href="mailto:contact@example.com" className="social-icon">
+            <a href="mailto:shooting729@gmail.com" className="social-icon">
               <Mail size={24} />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://github.com/shooting12" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Code size={24} />
             </a>
           </div>
         </div>
-        
+
         <div className="hero-image-wrapper animate-float">
           <div className="glass-panel image-panel">
             <img src={profileImg} alt="Shooting Chuang" className="profile-image" />
