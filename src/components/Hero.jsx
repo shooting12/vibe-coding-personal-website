@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, User, Mail, MapPin } from 'lucide-react';
+import { Code, User, Mail, MapPin, FileText } from 'lucide-react';
 import profileImg from '../assets/profile.jpg';
 import './Hero.css';
 
@@ -34,6 +34,9 @@ export default function Hero() {
             </a>
             <a href="https://github.com/shooting12" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Code size={24} />
+            </a>
+            <a href="https://drive.google.com/file/d/1vydwiupIZbbnBua608r5BS6ElIn_EKOT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="social-icon" title="Resume">
+              <FileText size={24} />
             </a>
           </div>
         </div>
