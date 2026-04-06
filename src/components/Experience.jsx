@@ -2,7 +2,6 @@ import React from 'react';
 import { Briefcase, GraduationCap, Calendar, MapPin } from 'lucide-react';
 import './Experience.css';
 import auroraLogoImg from '../assets/aurora_logo.png';
-import cmuLogoImg from '../assets/cmu_logo.png';
 
 const MetaIcon = () => (
   <svg role="img" viewBox="0 0 24 24" width="28" height="28" fill="#0668E1" xmlns="http://www.w3.org/2000/svg">
@@ -17,9 +16,9 @@ const AuroraIcon = () => (
 );
 
 const CmuIcon = () => (
-  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '28px' }}>
-    <img src={cmuLogoImg} alt="CMU Logo" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
-  </div>
+  <svg viewBox="0 0 50 20" width="70" height="28" fill="#C41230" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="16" fontFamily="Georgia, serif" fontSize="18" fontWeight="800" letterSpacing="0.5">CMU</text>
+  </svg>
 );
 
 export default function Experience() {
