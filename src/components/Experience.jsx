@@ -18,6 +18,9 @@ export default function Experience() {
                 <span className="timeline-date"><Calendar size={16} /> Nov 2023 - Present</span>
               </div>
               <h4 className="timeline-subtitle text-gradient">Meta</h4>
+              <h5 className="timeline-team" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem', marginTop: '-0.25rem', fontWeight: 500 }}>
+                Reality Labs — Spatial Extensions
+              </h5>
               <p className="timeline-text text-secondary">
                 Specializing in Horizon OS platform development. Leading technical initiatives to improve platform
                 performance and building robust systems for the next generation of computing.
@@ -26,7 +29,7 @@ export default function Experience() {
                 <span className="badge">Horizon OS</span>
                 <span className="badge">Platform Engineering</span>
                 <span className="badge">C++</span>
-                <span className="badge">React</span>
+                <span className="badge">Java</span>
               </div>
             </div>
           </div>
@@ -40,6 +43,9 @@ export default function Experience() {
                 <span className="timeline-date"><Calendar size={16} /> Mar 2023 - Oct 2023</span>
               </div>
               <h4 className="timeline-subtitle text-gradient">Aurora</h4>
+              <h5 className="timeline-team" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem', marginTop: '-0.25rem', fontWeight: 500 }}>
+                Perception Simulation
+              </h5>
               <p className="timeline-text text-secondary" style={{ marginBottom: "1rem" }}>
                 Optimized perception simulation by developing outlier detection for vehicle trajectories, significantly
                 boosting path prediction robustness. Also engineered 3D scene projection pipelines from simulated LiDAR/Radar data, enabling high-fidelity environmental modeling to validate safety-critical autonomous routing.
@@ -62,6 +68,9 @@ export default function Experience() {
                 <span className="timeline-date"><Calendar size={16} /> Aug 2021 - Dec 2022</span>
               </div>
               <h4 className="timeline-subtitle text-gradient">Carnegie Mellon University</h4>
+              <h5 className="timeline-team" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem', marginTop: '-0.25rem', fontWeight: 500 }}>
+                School of Computer Science
+              </h5>
               <p className="timeline-text text-secondary">
                 Focused on software architecture, scalable systems, and engineering management.
               </p>
