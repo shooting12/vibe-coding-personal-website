@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookOpen, ExternalLink, FileText } from 'lucide-react';
 import fingerDetectionPdf from '../assets/Paper_Finger Detection for Multi-Touch Tabletop Display System.pdf';
+import mapTouringPdf from '../assets/Paper_Multi-Display Map Touring with Tangible Widget_ACMMM10.pdf';
 import nprFacePdf from '../assets/Paper_NPRface_CVGIP09.pdf';
 import './Publications.css';
 
@@ -12,6 +13,13 @@ export default function Publications() {
       year: "2010",
       authors: "Shooting Chuang, et al.",
       link: fingerDetectionPdf
+    },
+    {
+      title: "Multi-Display Map Touring with Tangible Widget",
+      venue: "ACM Multimedia",
+      year: "2010",
+      authors: "Developed the tangible widget recognition and finger detection system",
+      link: mapTouringPdf
     },
     {
       title: "Non-Photorealistic Rendering Of Stylish, Distinctive Faces",
@@ -33,9 +41,9 @@ export default function Publications() {
               <div className="pub-icon"><BookOpen size={28} /></div>
               <div className="pub-content">
                 {pub.link ? (
-                  <a href={pub.link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }} className="hover-cyan text-primary">
+                  <a href={pub.link} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.6rem', width: '100%' }} className="hover-cyan text-primary">
                     <h3 style={{ margin: 0 }}>{pub.title}</h3>
-                    <FileText size={18} color="var(--accent-blue)" />
+                    <FileText size={18} color="var(--accent-blue)" style={{ flexShrink: 0 }} />
                   </a>
                 ) : (
                   <h3>{pub.title}</h3>
