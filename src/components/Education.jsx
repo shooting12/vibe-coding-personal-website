@@ -80,13 +80,13 @@ export default function Education() {
                     </h5>
                   </div>
                   <p className="timeline-text text-secondary">
-                    [Placeholder] To be continue...
+                    Specialized in image and vision processing; graduated ranked 3rd in the cohort.
                   </p>
                   <div className="skills-wrap">
                     <span className="badge">Image Processing</span>
-                    <span className="badge">Object Detection</span>
-                    <span className="badge">Face Recognition</span>
-                    <span className="badge">Algorithm Design</span>
+                    <span className="badge">Pattern Recognition</span>
+                    <span className="badge">Digital Visual Effect</span>
+                    <span className="badge">Computer Graphics</span>
                   </div>
                 </div>
               </div>

@@ -133,7 +133,7 @@ export default function Experience() {
                     </h5>
                   </div>
                   <p className="timeline-text text-secondary" style={{ marginBottom: "1rem" }}>
-                    [Placeholder] To be continue...
+                    Specializing in Android frameworks and system architecture. Led 20+ member cross-functional teams to deliver complex solutions like Wi-Fi Display and Camera Middleware for global manufacturers. Expertise lies in resolving critical bottlenecks: reduced peak memory usage by 50%, increased FPS by 10%, and earned an Innovative Patent Award for an OpenGL/C++ caching service that boosted UI rendering by 75%.
                   </p>
                   <div className="skills-wrap">
                     <span className="badge">C / C++</span>
@@ -168,13 +168,13 @@ export default function Experience() {
                     </h5>
                   </div>
                   <p className="timeline-text text-secondary" style={{ marginBottom: "1rem" }}>
-                    [Placeholder] To be continue...
+                    Dedicated to image processing and computer vision, securing 1st place in the Utechzone Machine Vision Prize. Expertise spans algorithm development and practical implementation, with core research in multi-touch finger detection, tangible widget recognition, and non-photorealistic facial rendering. These technical contributions were published in prominent conferences. Proven ability to translate advanced vision algorithms into real-world interactive applications, successfully delivering large-scale visual systems for the National Palace Museum's Virtual Museum Exhibition and the NTU Azalea Festival.
                   </p>
                   <div className="skills-wrap">
                     <span className="badge">Image Processing</span>
                     <span className="badge">Object Detection</span>
                     <span className="badge">Computer Vision</span>
-                    <span className="badge">Human Computer Interaction</span>
+                    <span className="badge">Algorithm Design</span>
                   </div>
                 </div>
               </div>
