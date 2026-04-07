@@ -1,9 +1,9 @@
-import React from 'react';
-import { ExternalLink, Code } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Code, ChevronDown, ChevronUp } from 'lucide-react';
 import './Projects.css';
 
 export default function Projects() {
-  const projects = [
+  const allProjects = [
     {
       title: "Weakly Supervised Object Localization System",
       description: "Implemented a weakly supervised convolutional neural network (CNN) for object detection and classification, specifically building a deep detection network that localizes objects within images without requiring traditional bounding box annotations.",
@@ -36,19 +36,24 @@ export default function Projects() {
     }
   ];
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Only show 3 projects (1 row on desktop) initially
+  const visibleProjects = isExpanded ? allProjects : allProjects.slice(0, 3);
+
   return (
     <section className="section" id="projects">
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Selected Projects</span></h2>
 
         <div className="projects-grid">
-          {projects.map((project, idx) => (
-            <div key={idx} className="glass-panel project-card">
+          {visibleProjects.map((project, idx) => (
+            <div key={idx} className="glass-panel project-card animate-reveal">
               <div className="project-header">
                 <h3>{project.title}</h3>
                 <div className="project-links">
-                  <a href={project.link}><Code size={20} /></a>
-                  <a href={project.link}><ExternalLink size={20} /></a>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer"><Code size={20} /></a>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer"><ExternalLink size={20} /></a>
                 </div>
               </div>
               <p className="project-desc text-secondary">{project.description}</p>
@@ -58,6 +63,21 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {allProjects.length > 3 && (
+          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+            <button 
+              className="toggle-expand-btn"
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {isExpanded ? (
+                <>Show Less <ChevronUp size={16} /></>
+              ) : (
+                <>View All Projects <ChevronDown size={16} /></>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
