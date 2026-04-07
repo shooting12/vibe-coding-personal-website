@@ -15,7 +15,7 @@ const videos = [
   },
   {
     id: 'GgK5vxKdQcA',
-    title: 'Digital Arts & Heritage Project',
+    title: 'Multi Display Map Touring with Tangible Widget',
     location: 'TBD Exhibition'
   }
 ];
@@ -42,7 +42,7 @@ export default function Media() {
               {!isPlaying ? (
                 <div className="video-thumbnail-container" onClick={() => setIsPlaying(true)}>
                   <img
-                    src={`https://img.youtube.com/vi/${activeVideo.id}/maxresdefault.jpg`}
+                    src={`https://img.youtube.com/vi/${activeVideo.id}/hqdefault.jpg`}
                     alt={activeVideo.title}
                     className="video-thumbnail"
                   />
