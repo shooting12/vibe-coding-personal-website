@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 import './Media.css';
 
@@ -23,53 +23,12 @@ const videos = [
 export default function Media() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const playerRef = useRef(null);
-  const iframeContainerRef = useRef(null);
 
   const activeVideo = videos[activeIndex];
 
-  useEffect(() => {
-    // Load YouTube IFrame API script
-    if (!window.YT) {
-      const tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
-  }, []);
-
   const handleVideoSwitch = (index) => {
     setActiveIndex(index);
-    setIsPlaying(false);
-    if (playerRef.current) {
-      playerRef.current.destroy();
-      playerRef.current = null;
-    }
-  };
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-    
-    // Use YouTube API to create and play the video
-    // This is more reliable for mobile autoplay policies
-    if (window.YT && window.YT.Player) {
-      playerRef.current = new window.YT.Player(iframeContainerRef.current, {
-        height: '480',
-        width: '853',
-        videoId: activeVideo.id,
-        playerVars: {
-          autoplay: 1,
-          playsinline: 1,
-          rel: 0,
-          modestbranding: 1
-        },
-        events: {
-          onReady: (event) => {
-            event.target.playVideo();
-          }
-        }
-      });
-    }
+    setIsPlaying(false); // Reset to thumbnail when switching
   };
 
   return (
@@ -77,11 +36,11 @@ export default function Media() {
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Featured Media</span></h2>
 
-        <div className="media-gallery animate-reveal">
+        <div className="media-gallery">
           <div className="glass-panel media-card focus-card">
-            <div className="video-responsive shadowed-box" ref={iframeContainerRef}>
-              {!isPlaying && (
-                <div className="video-thumbnail-container" onClick={handlePlay}>
+            <div className="video-responsive">
+              {!isPlaying ? (
+                <div className="video-thumbnail-container" onClick={() => setIsPlaying(true)}>
                   <img
                     src={`https://img.youtube.com/vi/${activeVideo.id}/hqdefault.jpg`}
                     alt={activeVideo.title}
@@ -93,6 +52,16 @@ export default function Media() {
                     </div>
                   </div>
                 </div>
+              ) : (
+                <iframe
+                  width="853"
+                  height="480"
+                  src={`https://www.youtube.com/embed/${activeVideo.id}?rel=0&modestbranding=1&autoplay=1`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title={activeVideo.title}
+                />
               )}
             </div>
             <div className="media-info">
