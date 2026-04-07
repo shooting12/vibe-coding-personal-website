@@ -6,17 +6,17 @@ const videos = [
   {
     id: 'GJLwgeU9Dho',
     title: 'Paintings and Calligraphies Interactive Table',
-    location: 'Taiwan National Palace Museum'
+    description: 'Exhibited at Taiwan National Palace Museum'
   },
   {
     id: 'mok0lmBNsfk',
     title: 'Interactive Multimedia Showcase',
-    location: 'TBD Exhibition'
+    description: 'Reported by Taiwan CTV News'
   },
   {
     id: 'GgK5vxKdQcA',
     title: 'Multi Display Map Touring with Tangible Widget',
-    location: 'TBD Exhibition'
+    description: 'Featured System in ACM Multimedia'
   }
 ];
 
@@ -66,7 +66,7 @@ export default function Media() {
             </div>
             <div className="media-info">
               <h3>{activeVideo.title}</h3>
-              <p className="text-secondary">Exhibited at <em>{activeVideo.location}</em></p>
+              <p className="text-secondary">{activeVideo.description}</p>
             </div>
           </div>
 
