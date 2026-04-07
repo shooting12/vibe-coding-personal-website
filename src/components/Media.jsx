@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Play } from 'lucide-react';
 import './Media.css';
 
@@ -23,12 +23,65 @@ const videos = [
 export default function Media() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const playerRef = useRef(null);
+  const playerTargetRef = useRef(null);
 
   const activeVideo = videos[activeIndex];
 
+  useEffect(() => {
+    // Load YouTube IFrame API script once
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    return () => {
+      if (playerRef.current) {
+        playerRef.current.destroy();
+      }
+    };
+  }, []);
+
   const handleVideoSwitch = (index) => {
+    if (playerRef.current) {
+      playerRef.current.destroy();
+      playerRef.current = null;
+    }
     setActiveIndex(index);
-    setIsPlaying(false); // Reset to thumbnail when switching
+    setIsPlaying(false);
+  };
+
+  const initPlayer = () => {
+    if (window.YT && window.YT.Player && playerTargetRef.current) {
+      playerRef.current = new window.YT.Player(playerTargetRef.current, {
+        videoId: activeVideo.id,
+        playerVars: {
+          autoplay: 1,
+          playsinline: 1,
+          rel: 0,
+          modestbranding: 1
+        },
+        events: {
+          onReady: (event) => {
+            event.target.playVideo();
+          }
+        }
+      });
+    }
+  };
+
+  // Re-initialize player if isPlaying becomes true and target is mounted
+  useEffect(() => {
+    if (isPlaying && !playerRef.current) {
+      initPlayer();
+    }
+  }, [isPlaying]);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+    // The actual initialization happens in the useEffect once the target div is rendered
   };
 
   return (
@@ -36,11 +89,11 @@ export default function Media() {
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Featured Media</span></h2>
 
-        <div className="media-gallery">
+        <div className="media-gallery animate-reveal">
           <div className="glass-panel media-card focus-card">
-            <div className="video-responsive">
+            <div className="video-responsive shadowed-box">
               {!isPlaying ? (
-                <div className="video-thumbnail-container" onClick={() => setIsPlaying(true)}>
+                <div className="video-thumbnail-container" onClick={handlePlay}>
                   <img
                     src={`https://img.youtube.com/vi/${activeVideo.id}/hqdefault.jpg`}
                     alt={activeVideo.title}
@@ -53,15 +106,7 @@ export default function Media() {
                   </div>
                 </div>
               ) : (
-                <iframe
-                  width="853"
-                  height="480"
-                  src={`https://www.youtube.com/embed/${activeVideo.id}?rel=0&modestbranding=1&autoplay=1`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title={activeVideo.title}
-                />
+                <div ref={playerTargetRef}></div>
               )}
             </div>
             <div className="media-info">
