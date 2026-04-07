@@ -23,18 +23,26 @@ const videos = [
 export default function Media() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isApiReady, setIsApiReady] = useState(!!window.YT);
   const playerRef = useRef(null);
   const playerTargetRef = useRef(null);
 
   const activeVideo = videos[activeIndex];
 
   useEffect(() => {
-    // Load YouTube IFrame API script once
+    // Load YouTube IFrame API script
     if (!window.YT) {
       const tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // Listener for API ready
+      window.onYouTubeIframeAPIReady = () => {
+        setIsApiReady(true);
+      };
+    } else {
+      setIsApiReady(true);
     }
 
     return () => {
@@ -44,44 +52,45 @@ export default function Media() {
     };
   }, []);
 
-  const handleVideoSwitch = (index) => {
-    if (playerRef.current) {
-      playerRef.current.destroy();
-      playerRef.current = null;
-    }
-    setActiveIndex(index);
-    setIsPlaying(false);
-  };
-
-  const initPlayer = () => {
-    if (window.YT && window.YT.Player && playerTargetRef.current) {
+  // Initialize player as soon as possible (Pre-mounting)
+  useEffect(() => {
+    if (isApiReady && playerTargetRef.current && !playerRef.current) {
       playerRef.current = new window.YT.Player(playerTargetRef.current, {
         videoId: activeVideo.id,
         playerVars: {
-          autoplay: 1,
+          autoplay: 0,
           playsinline: 1,
           rel: 0,
           modestbranding: 1
         },
         events: {
-          onReady: (event) => {
-            event.target.playVideo();
+          onReady: () => {
+            // Player is now ready for synchronous playVideo() calls
           }
         }
       });
     }
+  }, [isApiReady]);
+
+  const handleVideoSwitch = (index) => {
+    setActiveIndex(index);
+    setIsPlaying(false);
+    
+    if (playerRef.current && playerRef.current.loadVideoById) {
+      playerRef.current.loadVideoById(videos[index].id);
+      playerRef.current.pauseVideo();
+    }
   };
 
-  // Re-initialize player if isPlaying becomes true and target is mounted
-  useEffect(() => {
-    if (isPlaying && !playerRef.current) {
-      initPlayer();
-    }
-  }, [isPlaying]);
-
   const handlePlay = () => {
-    setIsPlaying(true);
-    // The actual initialization happens in the useEffect once the target div is rendered
+    // ESSENTIAL: Synchronous call within the user interaction tick for mobile
+    if (playerRef.current && playerRef.current.playVideo) {
+      playerRef.current.playVideo();
+      setIsPlaying(true);
+    } else {
+      // Fallback if API or player not ready yet
+      setIsPlaying(true);
+    }
   };
 
   return (
@@ -92,8 +101,25 @@ export default function Media() {
         <div className="media-gallery animate-reveal">
           <div className="glass-panel media-card focus-card">
             <div className="video-responsive shadowed-box">
-              {!isPlaying ? (
-                <div className="video-thumbnail-container" onClick={handlePlay}>
+              {/* THE PLAYER CONTAINER IS PERMANENTLY IN THE DOM (Pre-mounted) */}
+              <div 
+                className={`player-wrapper ${isPlaying ? 'visible' : 'hidden'}`}
+                style={{ 
+                  visibility: isPlaying ? 'visible' : 'hidden',
+                  opacity: isPlaying ? 1 : 0,
+                  zIndex: 1
+                }}
+              >
+                <div ref={playerTargetRef}></div>
+              </div>
+
+              {/* THE THUMBNAIL OVERLAY COVERS THE PLAYER */}
+              {!isPlaying && (
+                <div 
+                  className="video-thumbnail-container" 
+                  onClick={handlePlay}
+                  style={{ zIndex: 10 }}
+                >
                   <img
                     src={`https://img.youtube.com/vi/${activeVideo.id}/hqdefault.jpg`}
                     alt={activeVideo.title}
@@ -105,8 +131,6 @@ export default function Media() {
                     </div>
                   </div>
                 </div>
-              ) : (
-                <div ref={playerTargetRef}></div>
               )}
             </div>
             <div className="media-info">
