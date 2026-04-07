@@ -43,26 +43,24 @@ export default function Projects() {
   useEffect(() => {
     const updateItemsPerRow = () => {
       if (gridRef.current) {
-        const styles = window.getComputedStyle(gridRef.current);
-        const gridTemplateColumns = styles.getPropertyValue('grid-template-columns');
-        const columns = gridTemplateColumns.split(' ').length;
+        const containerWidth = gridRef.current.clientWidth;
+        const cardWidth = 350; // Match CSS base width
+        const gap = 32; // 2rem = 32px
+        // Calculate how many cards fit in one row
+        const columns = Math.floor((containerWidth + gap) / (cardWidth + gap)) || 1;
         setItemsPerRow(columns);
       }
     };
 
-    // Initial check
     updateItemsPerRow();
-
-    // Use ResizeObserver for responsive updates
     const observer = new ResizeObserver(updateItemsPerRow);
     if (gridRef.current) {
       observer.observe(gridRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
 
-  // Show only one row (determined by grid layout) if not expanded
+  // Show only 1 row of projects (dynamic calculation) when collapsed
   const visibleProjects = isExpanded ? allProjects : allProjects.slice(0, itemsPerRow);
 
   return (

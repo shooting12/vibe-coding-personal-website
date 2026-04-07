@@ -1,23 +1,15 @@
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
+  flex: 0 1 350px;
   width: 100%;
-  max-width: 450px;
-  justify-self: center;
 }
 
 .project-header {
