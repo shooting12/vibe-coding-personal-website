@@ -5,7 +5,7 @@
 
 .media-card {
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
   overflow: hidden;
   padding: 0;
   border-radius: 20px;
@@ -87,7 +87,8 @@
 }
 
 .play-icon {
-  margin-left: 2px; /* Visual centering */
+  margin-left: 2px;
+  /* Visual centering */
 }
 
 .media-info {
@@ -100,5 +101,7 @@
 }
 
 @media (max-width: 768px) {
-  .media-image-wrapper { height: 300px; }
+  .media-image-wrapper {
+    height: 300px;
+  }
 }
