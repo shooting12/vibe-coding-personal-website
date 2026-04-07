@@ -157,11 +157,6 @@
 
 .media-info {
   padding: 1.5rem 2.5rem;
-  /* Fixed-ish height to prevent layout shifts on mobile */
-  min-height: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .media-info h3 {
