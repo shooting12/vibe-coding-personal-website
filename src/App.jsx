@@ -21,7 +21,7 @@ function App() {
         <Publications />
       </main>
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} Shooting Chuang. Built with React & Vite.</p>
+        <p>&copy; {new Date().getFullYear()} Shooting Chuang.</p>
       </footer>
     </div>
   );
