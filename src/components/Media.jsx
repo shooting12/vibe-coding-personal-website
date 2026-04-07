@@ -22,7 +22,7 @@ export default function Media() {
                   />
                   <div className="play-button-overlay">
                     <div className="play-button-circle">
-                      <Play fill="white" size={48} className="play-icon" />
+                      <Play fill="white" stroke="white" strokeWidth={0} size={28} className="play-icon" />
                     </div>
                   </div>
                 </div>

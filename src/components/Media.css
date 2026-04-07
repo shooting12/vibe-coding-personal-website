@@ -67,28 +67,27 @@
 }
 
 .play-button-circle {
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 64px;
+  height: 64px;
+  background: rgba(33, 33, 33, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .video-thumbnail-container:hover .play-button-circle {
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  background: rgba(45, 45, 45, 0.9);
+  transform: scale(1.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .play-icon {
-  margin-left: 4px; /* Slight offset for visual centering of the triangle */
+  margin-left: 2px; /* Visual centering */
 }
 
 .media-info {
