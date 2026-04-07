@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './SideNav.css';
 
 const sections = [
-  { id: 'hero', label: 'Home' },
+  { id: 'hero', label: 'Profile' },
   { id: 'experience', label: 'Experience' },
   { id: 'education', label: 'Education' },
   { id: 'media', label: 'Media' },
