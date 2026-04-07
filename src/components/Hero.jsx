@@ -15,9 +15,9 @@ export default function Hero() {
           <h1 className="name text-gradient">Shooting Chuang</h1>
           <h3 className="title" style={{ marginBottom: '0.5rem' }}>Senior Software Engineer at Meta</h3>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-            <GraduationCap size={20} color="var(--accent-blue)" />
-            <span style={{ fontSize: '1rem', fontWeight: 500 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', marginBottom: '1.5rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+            <GraduationCap size={20} color="var(--accent-blue)" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+            <span style={{ fontSize: '1rem', fontWeight: 500, lineHeight: '1.4' }}>
               M.S. in School of Computer Science, <span className="text-gradient">Carnegie Mellon University</span>
             </span>
           </div>
