@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Code, ChevronDown, ChevronUp } from 'lucide-react';
 import './Projects.css';
 
@@ -37,16 +37,40 @@ export default function Projects() {
   ];
 
   const [isExpanded, setIsExpanded] = useState(false);
+  const [itemsPerRow, setItemsPerRow] = useState(3);
+  const gridRef = useRef(null);
 
-  // Only show 3 projects (1 row on desktop) initially
-  const visibleProjects = isExpanded ? allProjects : allProjects.slice(0, 3);
+  useEffect(() => {
+    const updateItemsPerRow = () => {
+      if (gridRef.current) {
+        const styles = window.getComputedStyle(gridRef.current);
+        const gridTemplateColumns = styles.getPropertyValue('grid-template-columns');
+        const columns = gridTemplateColumns.split(' ').length;
+        setItemsPerRow(columns);
+      }
+    };
+
+    // Initial check
+    updateItemsPerRow();
+
+    // Use ResizeObserver for responsive updates
+    const observer = new ResizeObserver(updateItemsPerRow);
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Show only one row (determined by grid layout) if not expanded
+  const visibleProjects = isExpanded ? allProjects : allProjects.slice(0, itemsPerRow);
 
   return (
     <section className="section" id="projects">
       <div className="container">
         <h2 className="section-title"><span className="text-gradient">Selected Projects</span></h2>
 
-        <div className="projects-grid">
+        <div className="projects-grid" ref={gridRef}>
           {visibleProjects.map((project, idx) => (
             <div key={idx} className="glass-panel project-card animate-reveal">
               <div className="project-header">
@@ -64,9 +88,9 @@ export default function Projects() {
           ))}
         </div>
 
-        {allProjects.length > 3 && (
+        {allProjects.length > itemsPerRow && (
           <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-            <button 
+            <button
               className="toggle-expand-btn"
               onClick={() => setIsExpanded(!isExpanded)}
             >

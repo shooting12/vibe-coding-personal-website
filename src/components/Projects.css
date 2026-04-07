@@ -1,6 +1,6 @@
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
   justify-content: center;
 }
@@ -8,20 +8,16 @@
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  flex: 0 1 calc(50% - 1rem);
-  max-width: 350px;
-}
-
-@media (max-width: 768px) {
-  .project-card {
-    flex: 0 1 100%;
-  }
+  width: 100%;
+  max-width: 450px;
+  justify-self: center;
 }
 
 .project-header {
