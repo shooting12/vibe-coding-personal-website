@@ -6,11 +6,13 @@ import Media from './components/Media';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
 import NavBar from './components/NavBar';
+import SideNav from './components/SideNav';
 import './App.css';
 
 function App() {
   return (
     <div className="app-container">
+      <SideNav />
       <main className="main-content">
         <Hero />
         <NavBar />

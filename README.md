@@ -1,4 +1,4 @@
-# Shooting Chuang - Personal Website
+# Personal Website
 
 A modern, responsive personal website built with React and Vite.
 

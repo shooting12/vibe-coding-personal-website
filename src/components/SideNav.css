@@ -1,0 +1,78 @@
+.side-nav {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0.5rem;
+}
+
+.side-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.side-nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.active .side-nav-dot {
+  background: var(--accent-cyan);
+  transform: scale(1.4);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+  border-color: rgba(0, 243, 255, 0.5);
+}
+
+.side-nav-label {
+  position: absolute;
+  right: 2rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+.side-nav-item:hover .side-nav-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* For active item, keep dot scaled but can also show label on hover */
+.side-nav-item:hover .side-nav-dot {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.active:hover .side-nav-dot {
+  background: var(--accent-cyan);
+}
+
+@media (max-width: 1024px) {
+  .side-nav {
+    display: none;
+  }
+}
