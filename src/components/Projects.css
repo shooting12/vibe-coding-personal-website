@@ -1,7 +1,8 @@
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -13,6 +14,14 @@
 .project-card {
   display: flex;
   flex-direction: column;
+  flex: 0 1 calc(50% - 1rem);
+  max-width: 350px;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 1 100%;
+  }
 }
 
 .project-header {
