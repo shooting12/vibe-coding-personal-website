@@ -28,3 +28,9 @@ To build the current development environment, the following software and package
 This environment is **fully compatible with GitHub Pages**.
 
 You can deploy it for free by configuring GitHub Actions to automatically compile the `dist` folder, or by using the `gh-pages` package to push the compiled static files to the `gh-pages` branch.
+
+(more details in NOTES/x. Deploy.md)
+
+## Deprecated
+
+This branch has been deprecated in favor of the shooting12.github.io branch.
